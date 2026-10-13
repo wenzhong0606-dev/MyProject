@@ -8,7 +8,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from init_project import create_project, validate_name
 
-@unittest.skipIf(os.environ.get('INIT_PROJECT_CHILD_VALIDATION') == '1',\n                 '生成项目内部校验时跳过脚手架递归测试')\nclass InitProjectTests(unittest.TestCase):
+@unittest.skipIf(os.environ.get('INIT_PROJECT_CHILD_VALIDATION') == '1',
+                 '生成项目内部校验时跳过脚手架递归测试')
+class InitProjectTests(unittest.TestCase):
     def test_invalid_name(self):
         for name in ("../bad", "有空格", "", "1bad"):
             with self.subTest(name=name):
