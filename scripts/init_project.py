@@ -70,46 +70,46 @@ def create_project(*, name: str, target: Path, product: str, stack: str,
             shutil.copy2(origin, dest)
 
         # 此三处都是当前新项目的专属资料，不影响共享治理规范。
-        profile = ("# 项目画像 — Project Profile\\n\\n"
-                   f"- 项目名称：{name}\\n"
-                   f"- 产品类型：{product.strip()}\\n"
-                   f"- 技术栈：{stack.strip() or '待确认'}\\n"
-                   f"- 目标仓库：{repo_url.strip() or '待确认'}\\n"
-                   f"- 默认分支：{branch.strip() or '待确认'}\\n"
-                   "- 项目状态：新建项目，全部阶段交付模板尚未通过审批\\n"
-                   "- 业务审批人、合规要求、环境与测试命令：待确认\\n\\n"
-                   "**注意**：不得因模板存在就将阶段标记为已完成。\\n")
+        profile = ("# 项目画像 — Project Profile\n\n"
+                   f"- 项目名称：{name}\n"
+                   f"- 产品类型：{product.strip()}\n"
+                   f"- 技术栈：{stack.strip() or '待确认'}\n"
+                   f"- 目标仓库：{repo_url.strip() or '待确认'}\n"
+                   f"- 默认分支：{branch.strip() or '待确认'}\n"
+                   "- 项目状态：新建项目，全部阶段交付模板尚未通过审批\n"
+                   "- 业务审批人、合规要求、环境与测试命令：待确认\n\n"
+                   "**注意**：不得因模板存在就将阶段标记为已完成。\n")
         (target / "docs/governance/project-profile.md").write_text(
-            profile.replace("\\\\n", "\\n"), encoding="utf-8")
-        readme = ("# " + name + " — " + product.strip() + "\\n\\n"
-                  "## 项目概况\\n\\n"
-                  f"- 技术栈：{stack.strip() or '待确认'}\\n"
-                  f"- 代码仓库：{repo_url.strip() or '待确认'}\\n"
-                  f"- 默认分支：{branch.strip() or '待确认'}\\n\\n"
-                  "## AI 设计开发入口\\n\\n"
-                  "1. 阅读 [AGENTS.md](AGENTS.md)。\\n"
-                  "2. 阅读 [项目画像](docs/governance/project-profile.md)。\\n"
+            profile.replace("\\\n", "\n"), encoding="utf-8")
+        readme = ("# " + name + " — " + product.strip() + "\n\n"
+                  "## 项目概况\n\n"
+                  f"- 技术栈：{stack.strip() or '待确认'}\n"
+                  f"- 代码仓库：{repo_url.strip() or '待确认'}\n"
+                  f"- 默认分支：{branch.strip() or '待确认'}\n\n"
+                  "## AI 设计开发入口\n\n"
+                  "1. 阅读 [AGENTS.md](AGENTS.md)。\n"
+                  "2. 阅读 [项目画像](docs/governance/project-profile.md)。\n"
                   "3. 进入 [治理规范](docs/governance/) 和 "
-                  "[12阶段独立成果](docs/deliverables/README.md)。\\n"
-                  "4. 运行 \`python scripts/task_router.py --type new-product\` 识别候选成果。\\n"
-                  "5. 运行 \`python scripts/governance_check.py\` 校验目录。\\n\\n"
-                  "所有设计文件初始为草案，不得视为已通过业务评审。\\n")
-        (target / "README.md").write_text(readme.replace("\\\\n", "\\n").replace("\\`", "`"), encoding="utf-8")
+                  "[12阶段独立成果](docs/deliverables/README.md)。\n"
+                  "4. 运行 \`python scripts/task_router.py --type new-product\` 识别候选成果。\n"
+                  "5. 运行 \`python scripts/governance_check.py\` 校验目录。\n\n"
+                  "所有设计文件初始为草案，不得视为已通过业务评审。\n")
+        (target / "README.md").write_text(readme.replace("\\\n", "\n").replace("\\`", "`"), encoding="utf-8")
         agents = (target / "AGENTS.md").read_text(encoding="utf-8")
         agents = agents.replace("当前仓库为治理规范仓库，不得虚构业务源码或项目技术栈。",
                                 "当前仓库为独立业务项目，应先读取 docs/governance/project-profile.md，未确认的业务事实或技术栈不得猜测。")
-        agents += ("\\n## 项目初始化约束\\n\\n"
-                   "- 本项目由 MyProject V1.3 初始化，项目特定事实以 docs/governance/project-profile.md 为准。\\n"
-                   "- 新建项目交付物均为 DRAFT，需经过实际设计及审批方可变更状态。\\n"
-                   "- 不得把原模板仓库的产品身份或默认仓库地址当作当前项目事实。\\n")
-        (target / "AGENTS.md").write_text(agents.replace("\\\\n", "\\n"), encoding="utf-8")
-        report = ("# 项目初始化报告 — Initialization Report\\n\\n"
-                  f"- 项目：{name}\\n- 类型：{product.strip()}\\n"
-                  f"- 生成时间（UTC）：{datetime.now(timezone.utc).isoformat(timespec='seconds')}\\n"
-                  f"- 复制文件数：{len(files)}\\n"
-                  "- 12阶段交付物：DRAFT 模板，未经业务验收\\n"
-                  "- 后续待办：补充审批人、构建/测试命令、技术栈约束和业务目标\\n")
-        (target / "INITIALIZATION_REPORT.md").write_text(report.replace("\\\\n", "\\n"), encoding="utf-8")
+        agents += ("\n## 项目初始化约束\n\n"
+                   "- 本项目由 MyProject V1.3 初始化，项目特定事实以 docs/governance/project-profile.md 为准。\n"
+                   "- 新建项目交付物均为 DRAFT，需经过实际设计及审批方可变更状态。\n"
+                   "- 不得把原模板仓库的产品身份或默认仓库地址当作当前项目事实。\n")
+        (target / "AGENTS.md").write_text(agents.replace("\\\n", "\n"), encoding="utf-8")
+        report = ("# 项目初始化报告 — Initialization Report\n\n"
+                  f"- 项目：{name}\n- 类型：{product.strip()}\n"
+                  f"- 生成时间（UTC）：{datetime.now(timezone.utc).isoformat(timespec='seconds')}\n"
+                  f"- 复制文件数：{len(files)}\n"
+                  "- 12阶段交付物：DRAFT 模板，未经业务验收\n"
+                  "- 后续待办：补充审批人、构建/测试命令、技术栈约束和业务目标\n")
+        (target / "INITIALIZATION_REPORT.md").write_text(report.replace("\\\n", "\n"), encoding="utf-8")
         if validate:
             cmds = [[sys.executable, "scripts/governance_check.py"],
                     [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py"]]
@@ -117,7 +117,7 @@ def create_project(*, name: str, target: Path, product: str, stack: str,
                 check = subprocess.run(cmd, cwd=target, capture_output=True, text=True, timeout=60,
                                        env={**os.environ, 'INIT_PROJECT_CHILD_VALIDATION': '1'})
                 if check.returncode:
-                    raise RuntimeError("初始化校验未通过: " + " ".join(cmd) + "\\n" + check.stdout + check.stderr)
+                    raise RuntimeError("初始化校验未通过: " + " ".join(cmd) + "\n" + check.stdout + check.stderr)
             plan["validation"] = "passed"
         else:
             plan["validation"] = "skipped"
@@ -143,7 +143,7 @@ def main():
                                 stack=args.stack, repo_url=args.repo_url, branch=args.branch,
                                 dry_run=args.dry_run, validate=not args.no_validate)
     except (ValueError, OSError, RuntimeError, subprocess.TimeoutExpired) as exc:
-        parser.exit(1, f"初始化失败：{exc}\\n")
+        parser.exit(1, f"初始化失败：{exc}\n")
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
