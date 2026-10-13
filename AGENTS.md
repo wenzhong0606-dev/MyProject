@@ -39,3 +39,10 @@
 - 各阶段产出必须单独成文件，不得混存或以治理文档代替业务产出。
 - 变更必须追踪关联 ID、检查下游阶段一致性；未批准的成果仍为 DRAFT。
 - 运行治理基础结构检查并如实报告结果，不得将结构验证当作业务验收。
+
+## 中英文目录与文件职责
+
+- 阶段目录与成果文件必须符合 `docs/deliverables/manifest.json` 所列中英文双语名称。
+- 创建或修改成果前，阅读 [交付物职责目录](docs/governance/deliverables-catalog-交付物职责清单.md)，确认职责、范围及禁止混放内容。
+- 目录 README 提供入口与阶段职责；每份独立文件必须有 Purpose、Input、Required Output、Exclusions、Definition of Done。
+- 如需新增或调整文件，先分析与已有文件是否职责重叠，再更新 manifest、交付物职责目录及 CI 检查。

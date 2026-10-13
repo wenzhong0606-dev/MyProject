@@ -13,3 +13,7 @@
 ## 独立阶段成果目录
 
 所有 12 阶段的独立产出文件集中在 [docs/deliverables](docs/deliverables/README.md)。每阶段拥有独立目录、交付清单、文件模板和评审要求。
+
+## 中英文阶段交付物规范
+
+阶段目录与成果文件采用英文稳定标识 + 中文含义的双语命名。详见 [12 阶段成果目录](docs/deliverables/README.md) 和 [46 份成果职责说明](docs/governance/deliverables-catalog-交付物职责清单.md)。

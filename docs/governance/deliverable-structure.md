@@ -20,3 +20,11 @@
 ## 状态
 
 DRAFT / IN_REVIEW / APPROVED / SUPERSEDED；阶段门禁使用 NOT_STARTED / IN_PROGRESS / PASS / BLOCKED / WAIVED。未经批准不应自动标记 PASS。
+
+## V1.1 中英文命名强制约束
+
+- 阶段目录格式：`NN-english-slug-中文名称`；成果文件格式：`english-slug-中文名称.md`。
+- `README.md`、`AGENTS.md`、`manifest.json` 等保留业界工具约定的英文文件名；文件内标题仍采用中英文双语。
+- 每份成果必须在正文写明职责意义、必填内容、不应承担的内容、上下游引用和完成标准。
+- 具体职责以 [交付物职责清单](./deliverables-catalog-交付物职责清单.md) 和 `manifest.json` 为准。
+- 重命名需要同步 manifest、脚本、引用和跨阶段追踪；严禁仅按名称创建多个含义重复的文件。

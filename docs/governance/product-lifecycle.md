@@ -20,3 +20,7 @@
 ## 12 阶段产出目录
 
 阶段成果存储于 [docs/deliverables](../deliverables/README.md)，文件结构以 [manifest.json](../deliverables/manifest.json) 为准。阶段成果与治理规范严格分离。
+
+## 文件的职责与范围
+
+各阶段的成果文件职责、需要输出的内容和禁止混写的内容参见 [交付物职责清单](./deliverables-catalog-交付物职责清单.md)。

@@ -1,285 +1,435 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "stages": [
     {
       "id": "01",
-      "directory": "01-strategy",
+      "directory": "01-strategy-产品定位",
       "title": "产品定位",
       "artifacts": [
         {
           "title": "愿景与定位",
-          "file": "vision.md"
+          "file": "vision-愿景与定位.md",
+          "english": "vision",
+          "purpose": "明确目标用户、产品价值、核心问题与差异化定位",
+          "exclusion": "不列详细需求、页面或技术选型"
         },
         {
           "title": "边界与范围",
-          "file": "scope.md"
+          "file": "scope-边界与范围.md",
+          "english": "scope",
+          "purpose": "界定产品包含、不包含的业务及阶段边界",
+          "exclusion": "不记录功能级的逐条验收标准"
         },
         {
           "title": "指标与目标",
-          "file": "metrics.md"
+          "file": "metrics-指标与目标.md",
+          "english": "metrics",
+          "purpose": "定义业务成功、使用效果及衡量口径",
+          "exclusion": "不替代上线后真实监测结果"
         }
       ],
-      "gate": "G1"
+      "gate": "G1",
+      "english": "strategy"
     },
     {
       "id": "02",
-      "directory": "02-requirements",
+      "directory": "02-requirements-需求分析",
       "title": "需求分析",
       "artifacts": [
         {
           "title": "角色与干系人",
-          "file": "stakeholders.md"
+          "file": "stakeholders-角色与干系人.md",
+          "english": "stakeholders",
+          "purpose": "识别业务参与者、职责、利益诉求及沟通边界",
+          "exclusion": "不等同于最终系统权限配置"
         },
         {
           "title": "业务场景",
-          "file": "scenarios.md"
+          "file": "scenarios-业务场景.md",
+          "english": "scenarios",
+          "purpose": "列出用户在何种条件下完成何种工作及预期结果",
+          "exclusion": "不代替细化的流程与状态图"
         },
         {
           "title": "需求规格",
-          "file": "requirements.md"
+          "file": "requirements-需求规格.md",
+          "english": "requirements",
+          "purpose": "为每项需求定义唯一编号、来源、优先级、约束",
+          "exclusion": "不描述数据库表结构或直接实现代码"
         },
         {
           "title": "验收条件",
-          "file": "acceptance-criteria.md"
+          "file": "acceptance-criteria-验收条件.md",
+          "english": "acceptance-criteria",
+          "purpose": "将需求转化为可客观判定的验收条件和反例",
+          "exclusion": "不等同于测试运行报告"
         }
       ],
-      "gate": "G1"
+      "gate": "G1",
+      "english": "requirements"
     },
     {
       "id": "03",
-      "directory": "03-business",
+      "directory": "03-business-业务流程",
       "title": "业务流程",
       "artifacts": [
         {
           "title": "流程清单",
-          "file": "process-list.md"
+          "file": "process-list-流程清单.md",
+          "english": "process-list",
+          "purpose": "建立端到端业务流程目录、流程责任人及触发条件",
+          "exclusion": "不重复描述功能菜单清单"
         },
         {
           "title": "流程模型",
-          "file": "process-model.md"
+          "file": "process-model-流程模型.md",
+          "english": "process-model",
+          "purpose": "定义流程节点、分支、角色、输入输出和异常流转",
+          "exclusion": "不混入页面布局及实现代码"
         },
         {
           "title": "业务规则",
-          "file": "business-rules.md"
+          "file": "business-rules-业务规则.md",
+          "english": "business-rules",
+          "purpose": "列出判定条件、控制约束、计算口径及业务依据",
+          "exclusion": "不等同于技术校验实现"
         },
         {
           "title": "状态转换",
-          "file": "state-model.md"
+          "file": "state-model-状态转换.md",
+          "english": "state-model",
+          "purpose": "定义合法状态、触发事件、前置条件与状态转换结果",
+          "exclusion": "不混同于页面按钮显隐状态"
         }
       ],
-      "gate": "G2"
+      "gate": "G2",
+      "english": "business"
     },
     {
       "id": "04",
-      "directory": "04-domain",
+      "directory": "04-domain-领域设计",
       "title": "领域设计",
       "artifacts": [
         {
           "title": "术语表",
-          "file": "glossary.md"
+          "file": "glossary-术语表.md",
+          "english": "glossary",
+          "purpose": "统一领域名词、中文定义、英文术语和同义词",
+          "exclusion": "不记录物理数据库字段"
         },
         {
           "title": "领域对象",
-          "file": "domain-objects.md"
+          "file": "domain-objects-领域对象.md",
+          "english": "domain-objects",
+          "purpose": "列明实体、值对象、属性含义、生命周期和业务标识",
+          "exclusion": "不提前绑定具体数据库技术"
         },
         {
           "title": "对象关系与不变量",
-          "file": "relationships.md"
+          "file": "relationships-对象关系与不变量.md",
+          "english": "relationships",
+          "purpose": "描述对象基数、聚合一致性边界及业务不变量",
+          "exclusion": "不替代 ER 物理模型"
         },
         {
           "title": "领域事件",
-          "file": "domain-events.md"
+          "file": "domain-events-领域事件.md",
+          "english": "domain-events",
+          "purpose": "识别领域事件、发生条件、携带数据和订阅者",
+          "exclusion": "不等同于消息队列技术配置"
         }
       ],
-      "gate": "G2"
+      "gate": "G2",
+      "english": "domain"
     },
     {
       "id": "05",
-      "directory": "05-functions",
+      "directory": "05-functions-功能设计",
       "title": "功能设计",
       "artifacts": [
         {
           "title": "功能架构",
-          "file": "function-tree.md"
+          "file": "function-tree-功能架构.md",
+          "english": "function-tree",
+          "purpose": "按业务能力拆分模块、功能包与唯一功能 ID",
+          "exclusion": "不充当页面布局清单"
         },
         {
           "title": "功能规格",
-          "file": "function-spec.md"
+          "file": "function-spec-功能规格.md",
+          "english": "function-spec",
+          "purpose": "逐项描述操作入口、业务动作、规则、状态与异常处理",
+          "exclusion": "不替代 API 请求参数说明"
         },
         {
           "title": "角色权限",
-          "file": "permissions.md"
+          "file": "permissions-角色权限.md",
+          "english": "permissions",
+          "purpose": "定义角色、数据范围、资源操作及授权决策矩阵",
+          "exclusion": "不记录用户账号或敏感凭据"
         },
         {
           "title": "菜单信息架构",
-          "file": "navigation.md"
+          "file": "navigation-菜单信息架构.md",
+          "english": "navigation",
+          "purpose": "定义用户导航路径、菜单归属与任务入口",
+          "exclusion": "不重复记录页面视觉样式"
         }
       ],
-      "gate": "G3"
+      "gate": "G3",
+      "english": "functions"
     },
     {
       "id": "06",
-      "directory": "06-ux",
+      "directory": "06-ux-交互原型",
       "title": "交互原型",
       "artifacts": [
         {
           "title": "用户任务流",
-          "file": "task-flows.md"
+          "file": "task-flows-用户任务流.md",
+          "english": "task-flows",
+          "purpose": "建立角色任务、前置条件、操作路径与结果反馈",
+          "exclusion": "不等同于端到端业务流程"
         },
         {
           "title": "页面清单",
-          "file": "page-inventory.md"
+          "file": "page-inventory-页面清单.md",
+          "english": "page-inventory",
+          "purpose": "为页面配置唯一编号、业务目标、角色、入口和关联功能",
+          "exclusion": "不以页面数代替业务功能完成度"
         },
         {
           "title": "交互规格",
-          "file": "interaction-spec.md"
+          "file": "interaction-spec-交互规格.md",
+          "english": "interaction-spec",
+          "purpose": "说明页面布局、字段、按钮、禁用条件、空态和异常提示",
+          "exclusion": "不替代领域规则的权威来源"
         },
         {
           "title": "原型评审",
-          "file": "prototype-review.md"
+          "file": "prototype-review-原型评审.md",
+          "english": "prototype-review",
+          "purpose": "记录页面可发现性、信息负担、可用性及评审问题",
+          "exclusion": "不充当业务验收签署"
         }
       ],
-      "gate": "G3"
+      "gate": "G3",
+      "english": "ux"
     },
     {
       "id": "07",
-      "directory": "07-data",
+      "directory": "07-data-数据设计",
       "title": "数据设计",
       "artifacts": [
         {
           "title": "逻辑数据模型",
-          "file": "logical-model.md"
+          "file": "logical-model-逻辑数据模型.md",
+          "english": "logical-model",
+          "purpose": "将领域对象映射为逻辑实体、关系与键约束",
+          "exclusion": "不包含未经确认的生产建表命令"
         },
         {
           "title": "数据字典",
-          "file": "data-dictionary.md"
+          "file": "data-dictionary-数据字典.md",
+          "english": "data-dictionary",
+          "purpose": "规定字段含义、类型、是否必填、取值范围、默认值和来源",
+          "exclusion": "不混入 UI 文案清单"
         },
         {
           "title": "数据生命周期",
-          "file": "data-lifecycle.md"
+          "file": "data-lifecycle-数据生命周期.md",
+          "english": "data-lifecycle",
+          "purpose": "描述数据创建、变更、归档、删除、保留和审计策略",
+          "exclusion": "不代替真实数据操作日志"
         },
         {
           "title": "迁移方案",
-          "file": "migration-plan.md"
+          "file": "migration-plan-迁移方案.md",
+          "english": "migration-plan",
+          "purpose": "确定兼容性、迁移步骤、回填、校验与回滚计划",
+          "exclusion": "不直接执行数据迁移"
         }
       ],
-      "gate": "G4"
+      "gate": "G4",
+      "english": "data"
     },
     {
       "id": "08",
-      "directory": "08-architecture",
+      "directory": "08-architecture-技术设计",
       "title": "技术设计",
       "artifacts": [
         {
           "title": "架构方案",
-          "file": "architecture.md"
+          "file": "architecture-架构方案.md",
+          "english": "architecture",
+          "purpose": "定义模块分层、部署单元、依赖关系及技术决策依据",
+          "exclusion": "不重新定义业务对象和规则"
         },
         {
           "title": "API契约",
-          "file": "api-contracts.md"
+          "file": "api-contracts-API契约.md",
+          "english": "api-contracts",
+          "purpose": "定义 API 端点、输入输出、鉴权、错误码与版本约定",
+          "exclusion": "不替代业务功能规格"
         },
         {
           "title": "安全非功能要求",
-          "file": "security-nfr.md"
+          "file": "security-nfr-安全非功能要求.md",
+          "english": "security-nfr",
+          "purpose": "定义安全、性能、可用性、容量、并发及恢复目标",
+          "exclusion": "不在未经评估时声称符合标准"
         },
         {
           "title": "集成方案",
-          "file": "integration.md"
+          "file": "integration-集成方案.md",
+          "english": "integration",
+          "purpose": "规定上下游系统、集成责任、协议、失败重试及幂等性",
+          "exclusion": "不复制外部系统全部接口源码"
         }
       ],
-      "gate": "G4"
+      "gate": "G4",
+      "english": "architecture"
     },
     {
       "id": "09",
-      "directory": "09-implementation",
+      "directory": "09-implementation-开发实现",
       "title": "开发实现",
       "artifacts": [
         {
           "title": "实施任务",
-          "file": "implementation-plan.md"
+          "file": "implementation-plan-实施任务.md",
+          "english": "implementation-plan",
+          "purpose": "拆分可交付任务，标注依赖、负责人、估算与完成条件",
+          "exclusion": "不以计划表替代实际交付"
         },
         {
           "title": "实现记录",
-          "file": "implementation-log.md"
+          "file": "implementation-log-实现记录.md",
+          "english": "implementation-log",
+          "purpose": "记录实现差异、关联提交、文件范围与设计变更",
+          "exclusion": "不伪造已实现功能"
         },
         {
           "title": "开发自测",
-          "file": "unit-test-report.md"
+          "file": "unit-test-report-开发自测.md",
+          "english": "unit-test-report",
+          "purpose": "记录真实执行的构建、单测、静态检查与失败证据",
+          "exclusion": "未运行时不得报告通过"
         }
       ],
-      "gate": "G5"
+      "gate": "G5",
+      "english": "implementation"
     },
     {
       "id": "10",
-      "directory": "10-qa",
+      "directory": "10-qa-测试验收",
       "title": "测试验收",
       "artifacts": [
         {
           "title": "测试方案",
-          "file": "test-plan.md"
+          "file": "test-plan-测试方案.md",
+          "english": "test-plan",
+          "purpose": "定义测试层次、范围、环境、覆盖策略和准入退出标准",
+          "exclusion": "不代替具体测试用例"
         },
         {
           "title": "测试用例",
-          "file": "test-cases.md"
+          "file": "test-cases-测试用例.md",
+          "english": "test-cases",
+          "purpose": "以需求和功能 ID 列出正常、边界、权限与异常场景",
+          "exclusion": "不将未执行的用例写成通过"
         },
         {
           "title": "缺陷与回归",
-          "file": "defects.md"
+          "file": "defects-缺陷与回归.md",
+          "english": "defects",
+          "purpose": "维护缺陷编号、严重程度、复现步骤、责任人与回归证据",
+          "exclusion": "不在无证据时关闭问题"
         },
         {
           "title": "用户验收",
-          "file": "uat.md"
+          "file": "uat-用户验收.md",
+          "english": "uat",
+          "purpose": "登记业务代表的试用结果、遗留问题、签字与批准日期",
+          "exclusion": "AI 不得代替用户批准"
         }
       ],
-      "gate": "G5/G6"
+      "gate": "G5/G6",
+      "english": "qa"
     },
     {
       "id": "11",
-      "directory": "11-release",
+      "directory": "11-release-部署发布",
       "title": "部署发布",
       "artifacts": [
         {
           "title": "上线检查",
-          "file": "release-checklist.md"
+          "file": "release-checklist-上线检查.md",
+          "english": "release-checklist",
+          "purpose": "检查版本、环境、依赖、权限、数据备份及上线条件",
+          "exclusion": "不代表部署操作已经执行"
         },
         {
           "title": "部署手册",
-          "file": "deployment.md"
+          "file": "deployment-部署手册.md",
+          "english": "deployment",
+          "purpose": "提供实际环境部署、配置、验证和故障定位操作步骤",
+          "exclusion": "不在仓库中存放密钥"
         },
         {
           "title": "回滚方案",
-          "file": "rollback.md"
+          "file": "rollback-回滚方案.md",
+          "english": "rollback",
+          "purpose": "描述触发条件、恢复步骤、数据一致性核查和责任人",
+          "exclusion": "不声称未经演练的回滚已验证"
         },
         {
           "title": "运维交接",
-          "file": "handover.md"
+          "file": "handover-运维交接.md",
+          "english": "handover",
+          "purpose": "明确监控告警、值守职责、故障升级、运维文档和联系人",
+          "exclusion": "不代替生产监控记录"
         }
       ],
-      "gate": "G6"
+      "gate": "G6",
+      "english": "release"
     },
     {
       "id": "12",
-      "directory": "12-operations",
+      "directory": "12-operations-运营迭代",
       "title": "运营迭代",
       "artifacts": [
         {
           "title": "运营指标",
-          "file": "operations-metrics.md"
+          "file": "operations-metrics-运营指标.md",
+          "english": "operations-metrics",
+          "purpose": "跟踪上线后的真实业务指标、技术指标、口径与趋势",
+          "exclusion": "不直接复用立项目标当实际值"
         },
         {
           "title": "用户反馈",
-          "file": "feedback.md"
+          "file": "feedback-用户反馈.md",
+          "english": "feedback",
+          "purpose": "记录用户反馈来源、影响角色、严重性及事实证据",
+          "exclusion": "不将反馈直接当作批准的需求"
         },
         {
           "title": "迭代需求",
-          "file": "improvement-backlog.md"
+          "file": "improvement-backlog-迭代需求.md",
+          "english": "improvement-backlog",
+          "purpose": "将运营改进转换为可优先级排序的迭代项及预期收益",
+          "exclusion": "不直接等同开发任务已排期"
         },
         {
           "title": "复盘报告",
-          "file": "retrospective.md"
+          "file": "retrospective-复盘报告.md",
+          "english": "retrospective",
+          "purpose": "分析阶段目标完成度、根因、改进责任人与跟进验证",
+          "exclusion": "不隐瞒失败或未完成事项"
         }
       ],
-      "gate": "持续评审"
+      "gate": "持续评审",
+      "english": "operations"
     }
   ]
 }
