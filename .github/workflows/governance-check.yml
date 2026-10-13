@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths: ['AGENTS.md','README.md','docs/governance/**','docs/deliverables/**','scripts/**','tests/**','.github/workflows/governance-check.yml']
   pull_request:
-    paths: ['AGENTS.md','README.md','docs/governance/**','docs/deliverables/**','scripts/governance_check.py','.github/workflows/governance-check.yml']
+    paths: ['AGENTS.md','README.md','docs/governance/**','docs/deliverables/**','scripts/**','tests/**','.github/workflows/governance-check.yml']
 jobs:
   validate:
     runs-on: ubuntu-latest

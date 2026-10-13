@@ -27,3 +27,14 @@
 示例：`python scripts/task_router.py --type new-module` 或 `python scripts/task_router.py --type ui --json`。
 
 工具返回需要检查的候选阶段、文件和质量门禁；最终需要修改哪些文件，应以实际影响分析为准。
+
+## V1.3 新项目初始化 — Project Initialization
+
+[完整操作指南](docs/governance/project-initialization-项目初始化.md)。
+
+```powershell
+python scripts/init_project.py --name equipment-eam --destination "C:\\developer\\equipment-eam" --product "设备资产管理系统" --stack "Java 21 + Spring Boot" --dry-run
+python scripts/init_project.py --name equipment-eam --destination "C:\\developer\\equipment-eam" --product "设备资产管理系统" --stack "Java 21 + Spring Boot"
+```
+
+要求目标目录尚不存在，父目录已存在。工具复制治理规则和独立成果模板，重新生成项目画像，并运行基础校验；不会创建远程仓库。

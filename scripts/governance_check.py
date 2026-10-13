@@ -15,6 +15,8 @@ required = [
     "docs/governance/task-routing-任务路由规范.md",
     "docs/governance/templates/task-routing-record-任务路由记录.md",
     "scripts/task_router.py",
+    "scripts/init_project.py",
+    "docs/governance/project-initialization-项目初始化.md",
     "docs/governance/traceability.csv",
     "docs/deliverables/README.md",
     "docs/deliverables/manifest.json",
