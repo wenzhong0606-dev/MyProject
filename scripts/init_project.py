@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import re
 import shutil
@@ -113,7 +114,7 @@ def create_project(*, name: str, target: Path, product: str, stack: str,
             cmds = [[sys.executable, "scripts/governance_check.py"],
                     [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py"]]
             for cmd in cmds:
-                check = subprocess.run(cmd, cwd=target, capture_output=True, text=True, timeout=60)
+                check = subprocess.run(cmd, cwd=target, capture_output=True, text=True, timeout=60,\n                                       env={**os.environ, 'INIT_PROJECT_CHILD_VALIDATION': '1'})
                 if check.returncode:
                     raise RuntimeError("初始化校验未通过: " + " ".join(cmd) + "\\n" + check.stdout + check.stderr)
             plan["validation"] = "passed"
