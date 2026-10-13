@@ -1,4 +1,4 @@
-# AI 软件产品设计与开发治理总指令 V1.0
+# AI 软件产品设计与开发治理总指令 V1.2
 
 ## 语言与原则
 - 默认使用中文进行分析、说明和文档维护。
@@ -46,3 +46,13 @@
 - 创建或修改成果前，阅读 [交付物职责目录](docs/governance/deliverables-catalog-交付物职责清单.md)，确认职责、范围及禁止混放内容。
 - 目录 README 提供入口与阶段职责；每份独立文件必须有 Purpose、Input、Required Output、Exclusions、Definition of Done。
 - 如需新增或调整文件，先分析与已有文件是否职责重叠，再更新 manifest、交付物职责目录及 CI 检查。
+
+## V1.2 任务路由与修改前检查（必须执行）
+
+1. 在写入任何阶段成果前读取 `docs/governance/task-routing-任务路由规范.md` 与 `docs/governance/task-routes.json`。
+2. 将任务归类为 new-product、new-module、change-feature、bugfix、ui、data-change、api-change 或 audit。复合任务须覆盖其各个相关子类型。
+3. 调用 `python scripts/task_router.py --type <任务类型>` 获得候选阶段及文件；随后检查真实业务、源码与已批准设计，决定最终读取和修改范围。
+4. 用 `docs/governance/templates/task-routing-record-任务路由记录.md` 记录任务编号、路由选择、文件清单、影响分析与证据。该模板自身不可作为任务历史记录使用。
+5. 仅可在 manifest 声明的目录中保存相应交付物；新成果先核对是否与已有成果重叠，不得直接扩充无关目录。
+6. 必须报告哪些候选成果无需修改及其依据；公共契约、安全、权限、破坏性迁移等高风险事项遵循变更审批。
+7. 执行 `python scripts/governance_check.py` 和适用测试；CI 仅提供静态验证，不可代替业务审批或语义一致性判断。

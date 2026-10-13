@@ -17,3 +17,13 @@
 ## 中英文阶段交付物规范
 
 阶段目录与成果文件采用英文稳定标识 + 中文含义的双语命名。详见 [12 阶段成果目录](docs/deliverables/README.md) 和 [46 份成果职责说明](docs/governance/deliverables-catalog-交付物职责清单.md)。
+
+## V1.2 AI 任务自动路由
+
+- [任务路由执行规范](docs/governance/task-routing-任务路由规范.md)
+- [机器可读路由映射](docs/governance/task-routes.json)
+- [任务路由记录模板](docs/governance/templates/task-routing-record-任务路由记录.md)
+
+示例：`python scripts/task_router.py --type new-module` 或 `python scripts/task_router.py --type ui --json`。
+
+工具返回需要检查的候选阶段、文件和质量门禁；最终需要修改哪些文件，应以实际影响分析为准。

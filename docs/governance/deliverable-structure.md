@@ -28,3 +28,10 @@ DRAFT / IN_REVIEW / APPROVED / SUPERSEDED；阶段门禁使用 NOT_STARTED / IN_
 - 每份成果必须在正文写明职责意义、必填内容、不应承担的内容、上下游引用和完成标准。
 - 具体职责以 [交付物职责清单](./deliverables-catalog-交付物职责清单.md) 和 `manifest.json` 为准。
 - 重命名需要同步 manifest、脚本、引用和跨阶段追踪；严禁仅按名称创建多个含义重复的文件。
+
+## V1.2 AI 任务到文件的自动路由
+
+- 路由权威规则：`task-routes.json`；文件权威路径：`../deliverables/manifest.json`。
+- 新任务先执行 `scripts/task_router.py` 获取候选路径，核对现有成果再写入。
+- 工具不允许越过既有审批，更不能用结构检查取代对业务规则的人工确认。
+- AI 必须在任务报告中说明实改文件与候选文件的差异及原因。

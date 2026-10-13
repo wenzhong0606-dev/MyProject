@@ -11,6 +11,10 @@ required = [
     "docs/governance/deliverable-structure.md",
     "docs/governance/deliverables-catalog-交付物职责清单.md",
     "docs/governance/design-gates.md",
+    "docs/governance/task-routes.json",
+    "docs/governance/task-routing-任务路由规范.md",
+    "docs/governance/templates/task-routing-record-任务路由记录.md",
+    "scripts/task_router.py",
     "docs/governance/traceability.csv",
     "docs/deliverables/README.md",
     "docs/deliverables/manifest.json",
@@ -58,6 +62,21 @@ if matrix.is_file():
             ids = [row["requirement_id"] for row in reader if row.get("requirement_id")]
             if len(ids) != len(set(ids)):
                 errors.append("追踪矩阵 requirement_id 重复")
+routes_file = ROOT / "docs/governance/task-routes.json"
+if routes_file.is_file() and manifest.is_file():
+    route_data = json.loads(routes_file.read_text(encoding="utf-8"))
+    catalog = json.loads(manifest.read_text(encoding="utf-8"))
+    stage_ids = {s["id"] for s in catalog["stages"]}
+    artifact_ids = {s["id"] + ":" + a["english"] for s in catalog["stages"] for a in s["artifacts"]}
+    if len(route_data.get("tasks", {})) < 8:
+        errors.append("缺少基础任务路由")
+    for task_name, task in route_data.get("tasks", {}).items():
+        for stage_id in task.get("stages", []):
+            if stage_id not in stage_ids:
+                errors.append(f"任务 {task_name} 引用了未知阶段 {stage_id}")
+        for token in task.get("required", []):
+            if token not in artifact_ids:
+                errors.append(f"任务 {task_name} 引用了未知成果 {token}")
 if errors:
     raise SystemExit("\n".join(errors))
 print("中英文阶段目录、46 份独立成果的基础结构和职责字段检查通过；不代表业务审批通过。")

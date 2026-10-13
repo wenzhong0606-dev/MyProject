@@ -1,0 +1,169 @@
+{
+  "version": "1.2",
+  "description": "根据明确任务类型给出候选阶段与最低检查文件；实际修改范围必须基于源码和上下游影响分析确认，不能仅按候选清单机械写入。",
+  "tasks": {
+    "new-product": {
+      "title": "新产品开发",
+      "stages": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12"
+      ],
+      "required": [
+        "01:vision",
+        "01:scope",
+        "02:requirements",
+        "03:process-model",
+        "04:domain-objects",
+        "05:function-spec",
+        "06:interaction-spec",
+        "07:logical-model",
+        "08:architecture",
+        "09:implementation-plan",
+        "10:test-cases",
+        "11:release-checklist",
+        "12:operations-metrics"
+      ],
+      "gate": "按 G1-G6 分阶段批准"
+    },
+    "new-module": {
+      "title": "新增业务模块",
+      "stages": [
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10"
+      ],
+      "required": [
+        "02:requirements",
+        "03:process-model",
+        "03:business-rules",
+        "04:domain-objects",
+        "05:function-spec",
+        "05:permissions",
+        "06:interaction-spec",
+        "07:logical-model",
+        "08:api-contracts",
+        "09:implementation-plan",
+        "10:test-cases"
+      ],
+      "gate": "检查 G1-G5，依赖已有基线"
+    },
+    "change-feature": {
+      "title": "修改既有功能",
+      "stages": [
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10"
+      ],
+      "required": [
+        "02:requirements",
+        "05:function-spec",
+        "09:implementation-log",
+        "10:test-cases"
+      ],
+      "gate": "先做影响分析，按影响范围选取门禁"
+    },
+    "bugfix": {
+      "title": "缺陷修复",
+      "stages": [
+        "05",
+        "08",
+        "09",
+        "10"
+      ],
+      "required": [
+        "09:implementation-log",
+        "09:unit-test-report",
+        "10:defects"
+      ],
+      "gate": "复现、根因、回归证据"
+    },
+    "ui": {
+      "title": "页面交互优化",
+      "stages": [
+        "05",
+        "06",
+        "10"
+      ],
+      "required": [
+        "06:interaction-spec",
+        "06:prototype-review",
+        "10:test-cases"
+      ],
+      "gate": "可用性和交互回归"
+    },
+    "data-change": {
+      "title": "数据结构或迁移",
+      "stages": [
+        "04",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11"
+      ],
+      "required": [
+        "07:logical-model",
+        "07:data-dictionary",
+        "07:migration-plan",
+        "08:api-contracts",
+        "10:test-cases",
+        "11:rollback"
+      ],
+      "gate": "数据兼容、安全与回滚审查"
+    },
+    "api-change": {
+      "title": "API 及公共接口变更",
+      "stages": [
+        "05",
+        "08",
+        "09",
+        "10"
+      ],
+      "required": [
+        "08:api-contracts",
+        "08:security-nfr",
+        "09:implementation-log",
+        "10:test-cases"
+      ],
+      "gate": "兼容性、安全及调用方影响分析"
+    },
+    "audit": {
+      "title": "只读审查",
+      "stages": [
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10"
+      ],
+      "required": [],
+      "gate": "仅输出证据与差距；默认不修改业务成果"
+    }
+  }
+}

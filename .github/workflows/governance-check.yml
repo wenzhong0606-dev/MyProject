@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['AGENTS.md','README.md','docs/governance/**','docs/deliverables/**','scripts/governance_check.py','.github/workflows/governance-check.yml']
+    paths: ['AGENTS.md','README.md','docs/governance/**','docs/deliverables/**','scripts/**','tests/**','.github/workflows/governance-check.yml']
   pull_request:
     paths: ['AGENTS.md','README.md','docs/governance/**','docs/deliverables/**','scripts/governance_check.py','.github/workflows/governance-check.yml']
 jobs:
@@ -15,3 +15,4 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/governance_check.py
+      - run: python -m unittest discover -s tests -p 'test_*.py' -v
