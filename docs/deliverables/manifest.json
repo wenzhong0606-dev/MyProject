@@ -1,0 +1,285 @@
+{
+  "version": "1.0",
+  "stages": [
+    {
+      "id": "01",
+      "directory": "01-strategy",
+      "title": "产品定位",
+      "artifacts": [
+        {
+          "title": "愿景与定位",
+          "file": "vision.md"
+        },
+        {
+          "title": "边界与范围",
+          "file": "scope.md"
+        },
+        {
+          "title": "指标与目标",
+          "file": "metrics.md"
+        }
+      ],
+      "gate": "G1"
+    },
+    {
+      "id": "02",
+      "directory": "02-requirements",
+      "title": "需求分析",
+      "artifacts": [
+        {
+          "title": "角色与干系人",
+          "file": "stakeholders.md"
+        },
+        {
+          "title": "业务场景",
+          "file": "scenarios.md"
+        },
+        {
+          "title": "需求规格",
+          "file": "requirements.md"
+        },
+        {
+          "title": "验收条件",
+          "file": "acceptance-criteria.md"
+        }
+      ],
+      "gate": "G1"
+    },
+    {
+      "id": "03",
+      "directory": "03-business",
+      "title": "业务流程",
+      "artifacts": [
+        {
+          "title": "流程清单",
+          "file": "process-list.md"
+        },
+        {
+          "title": "流程模型",
+          "file": "process-model.md"
+        },
+        {
+          "title": "业务规则",
+          "file": "business-rules.md"
+        },
+        {
+          "title": "状态转换",
+          "file": "state-model.md"
+        }
+      ],
+      "gate": "G2"
+    },
+    {
+      "id": "04",
+      "directory": "04-domain",
+      "title": "领域设计",
+      "artifacts": [
+        {
+          "title": "术语表",
+          "file": "glossary.md"
+        },
+        {
+          "title": "领域对象",
+          "file": "domain-objects.md"
+        },
+        {
+          "title": "对象关系与不变量",
+          "file": "relationships.md"
+        },
+        {
+          "title": "领域事件",
+          "file": "domain-events.md"
+        }
+      ],
+      "gate": "G2"
+    },
+    {
+      "id": "05",
+      "directory": "05-functions",
+      "title": "功能设计",
+      "artifacts": [
+        {
+          "title": "功能架构",
+          "file": "function-tree.md"
+        },
+        {
+          "title": "功能规格",
+          "file": "function-spec.md"
+        },
+        {
+          "title": "角色权限",
+          "file": "permissions.md"
+        },
+        {
+          "title": "菜单信息架构",
+          "file": "navigation.md"
+        }
+      ],
+      "gate": "G3"
+    },
+    {
+      "id": "06",
+      "directory": "06-ux",
+      "title": "交互原型",
+      "artifacts": [
+        {
+          "title": "用户任务流",
+          "file": "task-flows.md"
+        },
+        {
+          "title": "页面清单",
+          "file": "page-inventory.md"
+        },
+        {
+          "title": "交互规格",
+          "file": "interaction-spec.md"
+        },
+        {
+          "title": "原型评审",
+          "file": "prototype-review.md"
+        }
+      ],
+      "gate": "G3"
+    },
+    {
+      "id": "07",
+      "directory": "07-data",
+      "title": "数据设计",
+      "artifacts": [
+        {
+          "title": "逻辑数据模型",
+          "file": "logical-model.md"
+        },
+        {
+          "title": "数据字典",
+          "file": "data-dictionary.md"
+        },
+        {
+          "title": "数据生命周期",
+          "file": "data-lifecycle.md"
+        },
+        {
+          "title": "迁移方案",
+          "file": "migration-plan.md"
+        }
+      ],
+      "gate": "G4"
+    },
+    {
+      "id": "08",
+      "directory": "08-architecture",
+      "title": "技术设计",
+      "artifacts": [
+        {
+          "title": "架构方案",
+          "file": "architecture.md"
+        },
+        {
+          "title": "API契约",
+          "file": "api-contracts.md"
+        },
+        {
+          "title": "安全非功能要求",
+          "file": "security-nfr.md"
+        },
+        {
+          "title": "集成方案",
+          "file": "integration.md"
+        }
+      ],
+      "gate": "G4"
+    },
+    {
+      "id": "09",
+      "directory": "09-implementation",
+      "title": "开发实现",
+      "artifacts": [
+        {
+          "title": "实施任务",
+          "file": "implementation-plan.md"
+        },
+        {
+          "title": "实现记录",
+          "file": "implementation-log.md"
+        },
+        {
+          "title": "开发自测",
+          "file": "unit-test-report.md"
+        }
+      ],
+      "gate": "G5"
+    },
+    {
+      "id": "10",
+      "directory": "10-qa",
+      "title": "测试验收",
+      "artifacts": [
+        {
+          "title": "测试方案",
+          "file": "test-plan.md"
+        },
+        {
+          "title": "测试用例",
+          "file": "test-cases.md"
+        },
+        {
+          "title": "缺陷与回归",
+          "file": "defects.md"
+        },
+        {
+          "title": "用户验收",
+          "file": "uat.md"
+        }
+      ],
+      "gate": "G5/G6"
+    },
+    {
+      "id": "11",
+      "directory": "11-release",
+      "title": "部署发布",
+      "artifacts": [
+        {
+          "title": "上线检查",
+          "file": "release-checklist.md"
+        },
+        {
+          "title": "部署手册",
+          "file": "deployment.md"
+        },
+        {
+          "title": "回滚方案",
+          "file": "rollback.md"
+        },
+        {
+          "title": "运维交接",
+          "file": "handover.md"
+        }
+      ],
+      "gate": "G6"
+    },
+    {
+      "id": "12",
+      "directory": "12-operations",
+      "title": "运营迭代",
+      "artifacts": [
+        {
+          "title": "运营指标",
+          "file": "operations-metrics.md"
+        },
+        {
+          "title": "用户反馈",
+          "file": "feedback.md"
+        },
+        {
+          "title": "迭代需求",
+          "file": "improvement-backlog.md"
+        },
+        {
+          "title": "复盘报告",
+          "file": "retrospective.md"
+        }
+      ],
+      "gate": "持续评审"
+    }
+  ]
+}

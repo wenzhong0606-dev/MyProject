@@ -16,3 +16,7 @@
 | 12 运营迭代 | 指标、反馈、改进 | 迭代计划 |
 
 业务模型和流程需要反复校验；页面与数据设计可并行推进。已批准成果可复用，按任务裁剪，变更需做影响分析。
+
+## 12 阶段产出目录
+
+阶段成果存储于 [docs/deliverables](../deliverables/README.md)，文件结构以 [manifest.json](../deliverables/manifest.json) 为准。阶段成果与治理规范严格分离。
